@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini hackathon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js"></script>
+
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwLrhLXIUWZHHpIhN6QtuccuEocKbWdFo",
+            authDomain: "hackathon-1-4f5c9.firebaseapp.com",
+            projectId: "hackathon-1-4f5c9",
+            storageBucket: "hackathon-1-4f5c9.firebasestorage.app",
+            messagingSenderId: "268061829245",
+            appId: "1:268061829245:web:6abbc93a5c0b848e6f6914",
+            measurementId: "G-NSHD931RJ0"
+        };
+
+
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+
+        const dataContainer = document.getElementById('data-container');
+
+        db.collection("users").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                const userDiv = document.createElement('div');
+                userDiv.innerHTML = `<h2>${data.name}</h2><p>Email: ${data.email}</p>`;
+                dataContainer.appendChild(userDiv);
+            });
+        });
+    </script>
+
+
+
+    <div>
+        <div class="head-contianer">
+
+            <a href="#" class="head-two">Home</a>
+            <a href="#">Health
+            </a>
+            <a href="#">
+                location
+            </a>
+            <a href="#">Shop</a>
+            <div class="logo">
+                <a href="#">
+                    <h3> <em>cds</em> </h3>
+                </a>
+                <a href="cds">
+                    <h4>22</h4>
+                </a>
+                <a href="cds">
+                    <h5> <em>-formula</em> </h5>
+                </a>
+            </div>
+            <a href="#">Becom A Retailed</a>
+            <a href="form-container">Contact Us</a>
+            <a href="#">Recipe</a>
+            <a href="#"></a>
+            <a href="./abut.html">
+                <span class="cart">0</span><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+              </svg>
+              </a>
+        </div>
+        <div class="text-side">
+            <p>The</p>
+            <h1> De Simeno <br></h1>
+            <h2> Formula</h2>
+            <h3> unique</h3>
+            <h5>and certified by</h5>
+            <h6> the</h6>
+            <h4>inventer</h4>
+            <div class="image-png">
+                <img src="./asserts/cds_450_v2-1.png" alt="" width="500rem" class="image-2  ">
+                <img src="./asserts/cds_450_v2-1.png" alt="" width="500rem" class="image-1">
+            </div>
+            <div class="text-last">
+                <p>
+                    The De Simone Forulation unique and certified <br>
+                    by the inventer
+                </p>
+            </div>
+        </div>
+        <section class="health">
+            <div class="section-2">
+                <div class="doctor">
+                    <img src="./asserts/professor_desimone-1.png" alt="" class="profecer-img">
+
+                    <div class="doctor-img-text">
+                        <div class="content-hold">20+<br>YEARS OF<br>RESEARCH</div>
+                        <div class="content-hold">8<br>SELECTED <br>BACTERIAL<br>STRAINS</div>
+                        <div class="content-hold">900<br>UP TO 900 BILLION<br>LIVE BACTERIA<br>PER SACHET </div>
+                        <div class="content-hold">+200<br> SCIENTIFIC<br>PUBLICATIONS</div>
+                    </div>
+                </div>
+                <div class="section-2-text">
+                    <h1> <span class="heading-pink">Science</span> Speaks<br>For <span class="heading-color">Itself
+                        </span></h1>
+                    <p>The De Simone Forulation contained in CDS22-formula is the only <br>
+                        probiotic formulation recommended and reconnized by name in <br>
+                        the American COllage of Gastroenterology AGA guidenes for the <br>
+                        management of pouchities and other pouch-relateed disorder (Olleik <br>
+                        et al.,Gastroenterology,Vol.164,No 6,2023). <br></p>
+                    <p>The European Crohn's and Colities Organization (ECCO)has included <br>
+                        the De Simone Fprmulation is it's guidelines for the management of <br>
+                        Inflammatory Bowel Diseases (IBD) (ECCO,ECCO News,2023).<br>
+                        CDS22-formula is highly effective in the dietery managment of <br>
+                        various gastrointestinal conditions. the extensive scientfic evidance,<br>
+                        comprising over 200 peer-reviewed articles and more than 80 <br>
+                        controlled clinical studies,ensure that the benefits oserved in <br>
+                        clinical trials are replicable everyable use.
+                    </p>
+                </div>
+                <button class="button-style"> veiw products</button>
+            </div>
+        </section>
+    </div>
+    </div>
+    </div>
+    <section class="it work">
+        <div class="working">
+            <div class="section-3-text">
+                <h1>Why Does it <span class="heading-pink"> Work? </span></h1>
+                <p>Not all probiotic are the same.The Overall biological action of a probiotic is not <br>
+                    simply the sum of its indivials components' actions but the result of complex <br>
+                    network of realtionships between the microoganism it contains and the human <br>
+                    host.CDS22-formula speak louder than any technical description.<br></p>
+
+                <p>CDS22-formula combines 8 becterial strains selected for their biochemical and <br>
+                    enzymatic profiles and specifically calibrated in precise proprotions to <br>
+                    synergistically act on the physiology of the human gastrointestinal tract. <br>
+                    it is cruccial to emphasize that the production of the formulazione DE Simone falls <br>
+                    within the field of biology ,not chemistry ,as the bacteria forming the products <br>
+                    basd are living organizams .Their culivation requires advansed scientific <br>
+                    knowledge and specific know-how ,still protected by industrial secrecy.<br></p>
+
+                <p>
+                    The unique and advanced know-how develop by Prof.Claudio De Simone,<br>
+                    which include specific industrial secrets ,contributes to the uniqueness and <br>
+                    efficacy of CDS22-formula,making it extremily difficult for others to replicate or <br>
+                    produce an identical or functionally equivalent product. <br>
+                    Supported by solid scientfic evidance CDS22-formula is highly effective in the <br>
+                    dietery management of dysbiosis and other gastrointestinal conditions ,offering <br>
+                    proven and replacable reault. <br></p>
+                <img src="./asserts/Cycle.png" alt="" class="work-section-image">
+                    
+    </section>
+    <div class="benefits-section">
+        <div class="benefit-div-2">
+            <h1>Benefits:</h1>
+
+        </div>
+        <div class="content">
+            <p> <b>CDS22-formula supports the dietary management of intestinal dysbiosis, contributing to
+                    well-being in cases of intestinal <br>
+                    disorders connected to irritable bowel syndrome, ulcerative colitis, and paucities.</b>
+            </p><br>
+
+            <h3>Control of intestinal dysbiosis:</h3>
+            <p> Intestinal dysbiosis is a condition where the natural balance of microorganisms in the
+                intestine is altered, causing various <br>
+                gastrointestinal disorders. Controlling dysbiosis is crucial for maintaining digestive
+                health, improving patient comfort, and contributing <br>
+                to overall well-being, even in cases of chronic intestinal disorders like irritable bowel
+                syndrome, ulcerative colitis, and pouchitis.</p><br>
+
+            <h3>Immediate and prolonged restoration of intestinal flora:</h3>
+            <p>CDS22-formula is ideal for both acute and chronic episodes of intestinal dysbiosis. It
+                reduces the severity and duration of symptoms, <br>
+                improving patient comfort and accelerating recovery. It is particularly indicated for
+                supporting intestinal health and can be beneficial in <br>
+                cases of temporary or chronic intestinal disorders characterized by accelerated transit that
+                prevents normal daily activities or <br>
+                adequate night rest.</p><br>
+
+            <h3>Variety of Dosages:</h3>
+            <p>Available in different formats and dosages to support intestinal health and adapt to
+                individual dietary needs, offering flexibility to <br>
+                healthcare professionals in personalizing supplementation</p><br>
+
+            <h3>Original Formulation:</h3>
+            <p>CDS22-formula is the original FormulazionDe Simone, a unique combination of proprietary
+                bacterial strains designed to maximize <br>
+                intestinal well-being. The strains are cultivated and maintained in proprietary Master Cell
+                Banks, ensuring purity, quality, and <br>
+                consistency in every production</p><br>
+
+            <h3>Guaranteed Safety:</h3>
+            <p>Every dose has been tested to ensure maximum efficacy and safety. Thanks to a short supply
+                chain approved by the inventor, the <br>
+                product maintains the highest quality standards from raw material to packaging</p><br>
+
+            <h3>Affordability:</h3>
+            <p>CDS22-formula offers superior value compared to probiotics containing equivalent quantities
+                of bacteria. Efficient production and <br>
+                direct cost control allow us to offer a more affordable product on the market</p> <br>
+                      
+        </div>
+    </div>
+    <div class="frmula-div">
+        <div class="formula-text">
+            <h1><span class="text-div-1"> De</span> <span class="text-div-2"> Simone</span>
+                Formulation
+            </h1>
+            <div class="formula-style">
+                <p> pCDS22-formula supports the dietary management of intestinal dysbiosis, contributing to well-being
+                    in cases of intestinal <br>
+                    disorders connected to irritable bowel syndrome, ulcerative colitis, and paucitiesbr <br>
+
+
+                    Control of intestinal dysbiosis: <br> <br>
+                    Intestinal dysbiosis is a condition where the natural balance of microorganisms in the intestine is
+                    altered, causing various <br>
+                    gastrointestinal disorders. Controlling dysbiosis is crucial for maintaining digestive health,
+                    improving patient comfort, and contributing
+                    <br> <br>
+
+                    to overall well-being, even in cases of chronic intestinal disorders like irritable bowel syndrome,
+                    ulcerative colitis, and pouchitis. <br>
+                    The De Simone Formulation contained in CDS22-formula is the result of pioneering research by
+                    Professor Claudio De Simone (MD, FAGA), who redefined <br>
+                    therapeutic approaches to intestinal health by introducing the use of high concentration probiotic
+                    mixtures to dietetically manage acute and chronic <br>
+                    gastrointestinal disorders. <br> <br>
+
+                    ppioneering research by Professor Claudio De Simone (MD, FAGA), who redefined <br>
+                    therapeutic approaches to intestinal health by introducing the use of high concentration probiotic
+                    mixtures to dietetically manage acute and chronic <br>
+                    gastrointestinal disorders. <br> <br>
+                    His interest in the intestinal microbiota dates back to the 1980s when the importance of the
+                    intestinal flora s role was just beginning to be <br>
+                    understood. Professor De Simone is an honorary member of the American College of Gastroenterology
+                    and, after graduating in Medicine and <br>
+                    Surgery, specialized in gastroenterology, allergology, and clinical immunology. He taught Infectious
+                    Diseases at the University of L’Aquila (Italy). <br>
+
+                </p>
+            </div>
+            <div class="the-one-formula">
+                <div>
+                    <h1>
+                        There is ONE <br> DE <span class="text-div-2">Simone</span> </span>
+                        <span class="text-div-4"> Formulation</span>
+                    </h1>
+                    <p>
+                        He has published over 200 clinical studies, scientific articles, and book chapters. <br>
+
+
+                        Since the commercial launch of his renowned De Simone Formulation in the 1990s, the Professor
+                        has actively advocated for better regulation and quality <br>
+                        control of probiotics, highlighting the potential health and well-being risks. <br>
+
+
+                        As emphasized by Professor De Simone in numerous conferences and publications, many marketed
+                        probiotics have not been clinically tested or may not <br>
+                        correspond to the original clinically tested formulations when marketed, causing substantial
+                        differences in the safety and efficacy of the final product (De <br>
+                        Simone C. Clinical Gastroenterology and Hepatology Vol. 16 No. 9 2018). <br><br>
+
+
+                        Current regulations often do not require thorough comparative studies to ensure that changes in
+                        manufacturing processes do not compromise the efficacy and <br>
+                        safety of the commercially distributed probiotic produc <br>
+                    </p>
+                </div>
+                <div class="packaging-div">
+                    <div class="packaging-div">
+                        <h1>Product Packaging</h1>
+                    </div>
+                    <p>CDS formula is Available in sachetstested and notw</p>
+                    <p>Each format of CDS22-Formula is gluten-free and vegatan.</p>
+                </div>
+                <div class="main-div-1">
+                    <div class="image-style">
+                        <img src="./asserts/cds_112_v2-1.png" alt=" " width="300px">
+                        <h2>CDS22-formula</h2>
+                        <h3>900 bilion sachtes</h3>
+                        <p>Lorem ipsum dolor sit amet <br>
+                            adip doloribus molestias .</p>
+                        <button class="button-get">Get product</button>
+                    </div>
+                    <div class="image-style">
+                        <img src="./asserts/cds_112_v2-1.png" alt=" " width="300px">
+                        <h2>CDS22-formula</h2>
+                        <h3>900 bilion sachtes</h3>
+                        <p>Lorem ipsum dolor sit <br>
+                            adip doloribus mo.</p>
+                        <button class="button-get">Get product</button>
+                    </div>
+                    <div>
+                        <div class="image-style">
+                            <img src="./asserts/cds_112_v2-1.png" alt=" " width="300px">
+                            <h2>CDS22-formula</h2>
+                            <h3>900 bilion sachtes</h3>
+                            <p>Lorem ipsum dolor <br>
+                                adip doloribus mol</p>
+                            <button class="button-get">Get product</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+  
+    <h2></h2>
+    <div class="form-container">
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required=""><br><br>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required=""><br><br>
+          
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required=""></textarea><br><br>
+          
+          <button type="submit" class="submit">Submit</button>
+        </form>
+      </div>
+
+
+<script src="script.js"></script>
+</body>
+
+</html>
